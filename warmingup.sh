@@ -4,10 +4,7 @@ USER=$1
 PASS=$2
 DATABASE=$3
 
-EXEC="mysql --skip-column-names -u ${USER} -p${PASS} "
-
-echo $EXEC
-exit
+EXEC="mysql --skip-column-names -u ${USER} -p${PASS} -h 127.0.0.1 ${DATABASE} "
 
 (cat <<- _EOF_
 SELECT DISTINCT
